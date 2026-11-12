@@ -15,7 +15,7 @@ Canonical checkout is D:/Repos/kproductions.net. Remote is daddyfreds/kproductio
 - [x] Verify domain ownership in account Settings > Pages. Owner confirmed verification on November 12, 2026.
 - [x] Configure apex and www DNS. Public DNS verified all four GitHub Pages A records, www pointing to daddyfreds.github.io, and the GitHub verification TXT record.
 - [x] Run Publish website successfully. Deployment run https://github.com/daddyfreds/kproductions.net/actions/runs/43299455068.
-- [ ] Enable HTTPS and verify apex, www redirect, film links, and inquiries on the live domain.
+- [x] Verify HTTPS for apex and www, HTTP-to-HTTPS redirects, the live Films catalog and Tally destination. Inquiry notification delivery was confirmed by the owner.
 
 ## After the banquet
 
@@ -27,4 +27,4 @@ The homepage shows the upcoming Mansfield premiere and a post-banquet story noti
 
 ## HTTPS provisioning check
 
-The initial publication serves the expected homepage and catalog over HTTP. Both authoritative Namecheap nameservers and Google and Cloudflare resolvers return the expected GitHub Pages A records and www CNAME. No apex AAAA or CAA records were found. HTTPS currently fails certificate hostname validation while GitHub's domain check is pending. The owner removed and re-saved the repository custom domain to restart provisioning. Certificate issuance and HTTPS enforcement remain pending.
+Soft launch completed November 12, 2026. The GitHub-managed certificate validates successfully for kproductions.net and www.kproductions.net. Both HTTP hostnames and HTTPS www redirect to https://kproductions.net/. The homepage and /films/ return HTTP 200. The live homepage retains noindex and the published Tally inquiry URL. The initial certificate delay cleared after the owner re-saved the custom domain and GitHub finished provisioning.

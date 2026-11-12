@@ -1,6 +1,6 @@
 # K Productions website
 
-K Productions’ static Astro site showcases season films, movie posters, and premiere nights. The current build is a local prototype with a curated homepage, a complete [Films catalog](src/pages/films.astro), and a [Mansfield premiere story](src/content/premieres/mansfield-2026.md). The November 17, 2026 premiere has planned-coverage panels ready for event assets.
+K Productions’ static Astro site showcases season films, movie posters, and premiere nights. The site soft-launched on November 12, 2026 at https://kproductions.net with a curated homepage, a complete [Films catalog](src/pages/films.astro), and a [Mansfield premiere story](src/content/premieres/mansfield-2026.md). The November 17, 2026 premiere has planned-coverage panels ready for event assets.
 
 The canonical source repository is https://github.com/daddyfreds/kproductions.net. Production masters and the earlier prototype live separately in D:/Repos/kproductions.
 
