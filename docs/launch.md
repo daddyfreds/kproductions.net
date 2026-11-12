@@ -8,11 +8,12 @@ Canonical checkout is D:/Repos/kproductions.net. Remote is daddyfreds/kproductio
 - [x] Connect the published Tally inquiry form at https://tally.so/r/2jaDKM.
 - [x] Confirm the owner received a test inquiry notification.
 - [x] Build and review the public output, including the published inquiry link.
-- [ ] Push the initial reviewed release to GitHub.
+- [x] Push the initial reviewed release to GitHub. Commit 14e7d2b.
 - [x] Confirm the repository is public for GitHub Pages Free.
-- [ ] In repository Settings > Pages, set the publishing source to GitHub Actions and custom domain to kproductions.net.
-- [ ] Verify domain ownership in account Settings > Pages using the provided TXT record at the DNS host.
-- [ ] Configure apex and www DNS while preserving mail and verification records.
+- [x] In repository Settings > Pages, set the publishing source to GitHub Actions.
+- [x] Set the repository Pages custom domain to kproductions.net. Confirmed by the owner's settings screenshot.
+- [x] Verify domain ownership in account Settings > Pages. Owner confirmed verification on November 12, 2026.
+- [x] Configure apex and www DNS. Public DNS verified all four GitHub Pages A records, www pointing to daddyfreds.github.io, and the GitHub verification TXT record.
 - [ ] Run the Publish website workflow and verify its deployment.
 - [ ] Enable HTTPS and verify apex, www redirect, film links, and inquiries on the live domain.
 
