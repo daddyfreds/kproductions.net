@@ -47,13 +47,13 @@ Current lead artwork exports use Calling the shot, Superhero Introduction, The S
    ```
 
 3. Replace planned-coverage copy with what happened and use the actual media credits. A chapter without `media` displays a planned-coverage panel. The current schema accepts still images in chapters. Adding clips to chapters requires extending the schema and template with a click-to-play path.
-4. Update the program section with the right film and poster. The current template generates a page for each Markdown entry and shares Mansfield-specific program content across all of them. Move program details into per-story data before featuring a second event with its own work. The homepage feature and header link currently point to Mansfield explicitly.
-5. Set `draft: false` when the story is complete, and update the homepage's “Upcoming premiere” label and preview copy. Treat the draft flag as a display label. Every story in the collection currently appears in the static build. Follow the [release checklist](maintenance.md#public-release) before publishing.
+4. Update the program section with the right film and poster. The current template generates a page for each Markdown entry and shares Mansfield-specific program content across all of them. Move program details into per-story data before featuring a second event with its own work. The homepage currently features Mansfield explicitly. During the soft launch, the header links to its homepage teaser.
+5. Set `draft: false` when the story is complete to include its route in the public build. Update the homepage's upcoming-event copy and restore a link to the completed story. Draft stories are excluded from the public build. Follow the [release checklist](maintenance.md#public-release) before publishing.
 
 ## Update a poster or inquiry path
 
 - **Poster.** Export a small image, a regular display image, and a larger detail image. Update the source set, dimensions, full-size link, alt text, and photography credit. For the Mansfield poster, the current variants are 500, 900, and 1800 pixels wide. Check the complete 2:3 artwork and the zoom viewer at desktop and mobile sizes.
-- **Inquiry.** Once the owner has published the Tally form, add its HTTPS link to the project section and replace the pending notice. Keep the introduction aimed at adult team, club, or family contacts. Require name, reply email, and a short project description. Team or organization, product interest, and target date can be optional. Keep intake text-only and ask visitors to omit private athlete details. Verify spam protection, the confirmation screen, and delivery of a test inquiry to the owner.
+- **Inquiry.** The project section links to https://tally.so/r/2jaDKM in a new tab. Change the link in the homepage project section when replacing the form. Keep the introduction aimed at adult team, club, or family contacts. Require name, reply email, and a short project description. Team or organization, product interest, and target date can be optional. Keep intake text-only and ask visitors to omit private athlete details. Verify spam protection, the confirmation screen, and delivery of a test inquiry to the owner.
 
 ## Editorial review
 

@@ -5,7 +5,7 @@ import FilmLink from '../../components/FilmLink.astro';
 import { featuredFilm } from '../../data/films';
 
 export async function getStaticPaths() {
-  const entries = await getCollection('premieres');
+  const entries = await getCollection('premieres', ({ data }) => !data.draft);
   return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
 }
 const { entry } = Astro.props;

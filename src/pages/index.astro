@@ -76,18 +76,18 @@ const date = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UT
   <Poster kicker="03 / Custom season posters" />
 
   {premiere && (
-    <section class="section shell premiere-teaser" aria-labelledby="premiere-title">
+    <section class="section shell premiere-teaser" id="premieres" aria-labelledby="premiere-title">
       <div>
         <p class="eyebrow"><span class="dot"></span> 04 / Premieres</p>
         <h2 id="premiere-title">The night it all <em>comes together.</em></h2>
         <p>We produce the media and run the screening. The team, coaches, and families get to watch their season together.</p>
-        <a class="text-link" href={`/premieres/${premiere.id}/`}>Preview Mansfield’s premiere <span aria-hidden="true">↗</span></a>
+        <p>The story of Mansfield’s premiere night is coming after the banquet.</p>
       </div>
-      <a class="premiere-ticket" href={`/premieres/${premiere.id}/`}>
-        <span class="eyebrow">Upcoming premiere <span aria-hidden="true">↗</span></span>
+      <div class="premiere-ticket">
+        <span class="eyebrow">Upcoming premiere</span>
         <strong>{premiere.data.title}</strong>
         <span>{date.format(new Date(premiere.data.date + 'T00:00:00Z'))}</span>
-      </a>
+      </div>
     </section>
   )}
 
@@ -99,7 +99,7 @@ const date = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UT
       </div>
       <div>
         <p>Tell us about the team, the athlete, or the night you’re planning.</p>
-        <p class="draft-label">Inquiry form pending · local prototype</p>
+        <a class="button button-primary" href="https://tally.so/r/2jaDKM" target="_blank" rel="noopener noreferrer">Tell us about your project <span aria-hidden="true">↗</span><span class="sr-only"> (opens the inquiry form in a new tab)</span></a>
       </div>
     </div>
   </section>
