@@ -1,0 +1,19 @@
+---
+import FilmLink from './FilmLink.astro';
+import type { FilmExample } from '../data/films';
+
+interface Props {
+  example: FilmExample;
+  productName: string;
+}
+const { example, productName } = Astro.props;
+const className = example.orientation === 'portrait' ? 'film-image film-image-portrait' : 'film-image';
+---
+
+<FilmLink {...example} productName={productName} class={className}>
+  {example.artwork && (
+    <img src={example.artwork.src} alt={example.artwork.alt}
+      width={example.artwork.width} height={example.artwork.height} loading="lazy" />
+  )}
+  <span class="image-button"><span class="play" aria-hidden="true"></span> Watch {example.title}</span>
+</FilmLink>

@@ -1,0 +1,30 @@
+---
+import type { FilmExample } from '../data/films';
+
+interface Props {
+  title: string;
+  videoId: string;
+  start?: number;
+  class?: string;
+  id?: string;
+  year?: number;
+  orientation?: FilmExample['orientation'];
+  credits?: FilmExample['credits'];
+  productName?: string;
+  playback?: FilmExample['playback'];
+}
+const { title, videoId, start, class: className, id, year, orientation = 'landscape', credits, productName, playback = 'embed' } = Astro.props;
+const url = new URL('https://www.youtube.com/watch');
+url.searchParams.set('v', videoId);
+if (start) url.searchParams.set('t', String(start));
+---
+
+<a class={className} href={url} data-view={playback === 'embed' ? 'film' : undefined} data-id={videoId}
+  target={playback === 'youtube' ? '_blank' : undefined}
+  rel={playback === 'youtube' ? 'noopener noreferrer' : undefined}
+  data-start={start} data-title={title} data-example-id={id} data-year={year}
+  data-orientation={orientation} data-product={productName}
+  data-production={credits?.production} data-music={credits?.music}>
+  <slot />
+  {playback === 'youtube' && <span class="sr-only"> (opens YouTube in a new tab)</span>}
+</a>

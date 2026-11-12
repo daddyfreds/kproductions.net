@@ -1,0 +1,35 @@
+---
+import FilmPreview from './FilmPreview.astro';
+import FilmLink from './FilmLink.astro';
+import { products, spotlightProductIds } from '../data/films';
+
+interface Props {
+  catalog?: boolean;
+}
+const { catalog = false } = Astro.props;
+---
+
+<div class="spotlight-formats">
+  {spotlightProductIds.map((id) => {
+    const product = products[id];
+    const [lead, ...additional] = product.examples;
+    return (
+      <article class="spotlight-format" id={catalog ? id : undefined}>
+        <p class="eyebrow">Athletes & coaches</p>
+        <h3>{product.name}</h3>
+        <p>{product.description}</p>
+        {lead ? (
+          <>
+            <FilmPreview example={lead} productName={product.name} />
+            {additional.map((example) => (
+              <FilmLink {...example} productName={product.name} class="text-link">{example.title} <span aria-hidden="true">↗</span></FilmLink>
+            ))}
+          </>
+        ) : <p class="production-note">Examples in production</p>}
+        <a class="text-link" href={catalog ? '/#project' : `/films/#${id}`}>
+          {catalog ? 'Plan a ' + product.name : 'Explore ' + product.name} <span aria-hidden="true">↗</span>
+        </a>
+      </article>
+    );
+  })}
+</div>

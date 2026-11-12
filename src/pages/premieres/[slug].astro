@@ -1,0 +1,84 @@
+---
+import { getCollection, render } from 'astro:content';
+import SiteLayout from '../../layouts/SiteLayout.astro';
+import FilmLink from '../../components/FilmLink.astro';
+import { featuredFilm } from '../../data/films';
+
+export async function getStaticPaths() {
+  const entries = await getCollection('premieres');
+  return entries.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, date, location, summary, draft, chapters } = entry.data;
+const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UTC' })
+  .format(new Date(date + 'T00:00:00Z'));
+---
+
+<SiteLayout title={`${title} Premiere`} description={summary}>
+  <section class="case-hero" aria-labelledby="case-title">
+    <div class="shell case-hero-grid">
+      <div>
+        <a class="text-link back-link" href="/#posters"><span aria-hidden="true">←</span> Back to the work</a>
+        <p class="eyebrow"><span class="dot"></span> Premiere story / {draft ? 'Preview' : title}</p>
+        <h1 id="case-title">The night the season takes <em>the screen.</em></h1>
+        <p>{summary}</p>
+      </div>
+      <div class="case-screen">
+        <span class="eyebrow"><span class="dot"></span>{draft ? 'Upcoming premiere' : 'Premiere'}</span>
+        <strong>{title}</strong>
+        <span><time datetime={date}>{dateLabel}</time> · {location}</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section shell chapters" aria-labelledby="chapters-title">
+    <header class="section-head">
+      <div><p class="eyebrow"><span class="dot"></span> From setup to screening</p><h2 id="chapters-title">Inside the <em>premiere.</em></h2></div>
+      <div><Content /></div>
+    </header>
+    <ol class="chapter-grid">
+      {chapters.map((chapter, index) => (
+        <li class="chapter">
+          {chapter.media ? (
+            <figure>
+              <img class="chapter-media" src={chapter.media.src} alt={chapter.media.alt} loading="lazy" />
+              <figcaption>{chapter.media.caption}</figcaption>
+            </figure>
+          ) : (
+            <div class="chapter-media chapter-placeholder">
+              <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <span class="eyebrow">Planned coverage</span>
+            </div>
+          )}
+          <h3>{chapter.title}</h3>
+          <p>{chapter.description}</p>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section class="case-program" aria-labelledby="program-title">
+    <div class="shell program-inner">
+      <figure>
+        <a href="/media/mansfield-poster-detail.webp" data-view="poster" data-title="Mansfield Hornets season poster">
+          <img src="/media/mansfield-poster-small.webp" width="500" height="750" loading="lazy"
+            alt="Enlarge the 2026 Mansfield Hornets girls varsity soccer poster" />
+        </a>
+        <figcaption>Photography by Christopher Jones Photography</figcaption>
+      </figure>
+      <div>
+        <p class="eyebrow"><span class="dot"></span> The premiere program</p>
+        <h2 id="program-title">The film. <em>The poster.</em></h2>
+        <p>One season, two ways to remember it. Watch the 2026 varsity Season Story, {featuredFilm.title}, and explore the team’s custom movie poster.</p>
+        <figure class="program-still">
+          <img src="/media/born-for-this.webp" width="800" height="450" loading="lazy"
+            alt="Mansfield players appear behind the Born for This title." />
+          <figcaption><cite>Born for This</cite> · 2026 varsity film production still</figcaption>
+        </figure>
+        <FilmLink {...featuredFilm} productName="Season Story" class="text-link">Watch {featuredFilm.title} <span aria-hidden="true">↗</span></FilmLink>
+        <a href="/#project" class="button button-primary">Plan your premiere <span aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </section>
+</SiteLayout>

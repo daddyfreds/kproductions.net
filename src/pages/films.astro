@@ -1,0 +1,78 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import FilmPreview from '../components/FilmPreview.astro';
+import FilmLink from '../components/FilmLink.astro';
+import SpotlightFormats from '../components/SpotlightFormats.astro';
+import { products, productGroups } from '../data/films';
+---
+
+<SiteLayout title="Films" description="Explore season stories, senior tributes, game-day films, and individual spotlights from K Productions.">
+  <section class="catalog-intro shell" aria-labelledby="catalog-title">
+    <p class="eyebrow"><span class="dot"></span> The film collection</p>
+    <h1 id="catalog-title">Their season.<br />Their story. <em>Their movie.</em></h1>
+    <p>Find the film for the moment you want to remember, the game you want to rally around, or the person whose story deserves to be told.</p>
+  </section>
+
+  <nav class="catalog-index shell" aria-label="Film products">
+    {productGroups.map((group) => (
+      <div>
+        <a class="eyebrow" href={`#${group.id}`}>{group.name}</a>
+        <ul>
+          {group.productIds.map((id) => <li><a href={`#${id}`}>{products[id].name} <span aria-hidden="true">↗</span></a></li>)}
+        </ul>
+      </div>
+    ))}
+  </nav>
+
+  {productGroups.map((group, groupIndex) => (
+    <section class="catalog-group" id={group.id} aria-labelledby={`${group.id}-title`}>
+      <header class="shell catalog-group-head">
+        <p class="eyebrow"><span class="dot"></span> 0{groupIndex + 1} / {groupIndex === 2 ? 'Individual films' : 'Team films'}</p>
+        <h2 id={`${group.id}-title`}>{group.name}</h2>
+        <p>{group.description}</p>
+      </header>
+      {group.id === 'spotlights' ? (
+        <div class="shell"><SpotlightFormats catalog /></div>
+      ) : group.productIds.map((id) => {
+        const product = products[id];
+        const [lead, ...additional] = product.examples;
+        return (
+          <article class="shell catalog-product" id={id} aria-labelledby={`${id}-title`}>
+            <div class="product-copy">
+              <p class="eyebrow">{group.name}</p>
+              <h3 id={`${id}-title`}>{product.name}</h3>
+              <p>{product.description}</p>
+              <a class="text-link" href="/#project">Plan a {product.name} <span aria-hidden="true">↗</span></a>
+              {additional.length > 0 && (
+                <div class="additional-examples">
+                  <p class="eyebrow">More {product.name} films</p>
+                  <ul>
+                    {additional.map((example) => (
+                      <li>
+                        <FilmLink {...example} productName={product.name} class="additional-film">
+                          <span>{example.title}</span>
+                          <span>{example.year}<span class="sr-only"> — Watch film</span> <span aria-hidden="true">↗</span></span>
+                        </FilmLink>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+            <div class="product-example">
+              <FilmPreview example={lead} productName={product.name} />
+              <div class="film-caption"><strong>{lead.title}</strong><span>{lead.year} · Mansfield Girls Soccer</span></div>
+              <p class="example-credits">{lead.credits.production}{lead.credits.production && ' · '}Music {lead.credits.music}</p>
+            </div>
+          </article>
+        );
+      })}
+    </section>
+  ))}
+  <section class="project-section">
+    <div class="shell project-inner">
+      <div><p class="eyebrow"><span class="dot"></span> Make their movie</p><h2>Which moment <em>is yours?</em></h2></div>
+      <div><p>Start with a team, a person, or a date on the calendar. We’ll help shape the film.</p><a class="text-link" href="/#project">Start a Project <span aria-hidden="true">↗</span></a></div>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,27 @@
+---
+interface Props {
+  kicker?: string;
+}
+const { kicker = 'Custom season posters' } = Astro.props;
+---
+
+<section class="poster-section" id="posters" aria-labelledby="poster-title">
+  <div class="shell poster-layout">
+    <figure class="poster-art">
+      <a href="/media/mansfield-poster-detail.webp" data-view="poster" data-title="Mansfield Hornets season poster"
+        aria-label="Enlarge the Mansfield Hornets poster">
+        <img src="/media/mansfield-poster.webp" srcset="/media/mansfield-poster-small.webp 500w, /media/mansfield-poster.webp 900w"
+          sizes="(min-width: 900px) 39vw, 87vw" width="900" height="1350" loading="lazy"
+          alt="Movie poster for the 2026 Mansfield Hornets girls varsity soccer team, with a montage of players and coaches in green and gold." />
+        <span class="image-button" aria-hidden="true">↗ <span>Enlarge poster</span></span>
+      </a>
+      <figcaption>2026 Mansfield Girls Varsity Soccer · Photography by Christopher Jones Photography</figcaption>
+    </figure>
+    <div class="poster-copy">
+      <p class="eyebrow"><span class="dot"></span>{kicker}</p>
+      <h2 id="poster-title">Every season has heroes. Every hero needs a movie. <em>Every movie needs a poster.</em></h2>
+      <p>Give us the season’s photos. We’ll build a custom movie poster from the faces, big plays, and small moments your team will remember.</p>
+      <a class="text-link" href="/#project">Talk to us about a poster <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+</section>
