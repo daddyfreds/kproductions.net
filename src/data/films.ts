@@ -68,7 +68,7 @@ export const products: Record<string, FilmProduct> = {
     examples: [
       {
         id: 'spotlight-season-end',
-        title: 'Spotlight',
+        title: 'Dancing Through the Spotlight',
         videoId: 'OVKTOO2fTSQ',
         year: 2026,
         artwork: { src: '/media/season-end.webp', alt: 'Mansfield teammates watch together, smiling on the sideline.', width: 1200, height: 675 },
