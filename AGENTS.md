@@ -5,3 +5,5 @@
 - Keep the site static. Reuse the shared layout, media links, poster component, and CSS tokens when extending a page. A film link must work as a direct YouTube link with JavaScript disabled.
 - Keep prototype and release status accurate. `draft` in a premiere story changes its presentation. Draft premiere stories are excluded from the public build. The homepage may show an upcoming-event teaser.
 - Update the relevant guide in the same change when you change where content lives, how to update it, the approved design system, or the build and release process. Verify links and run the checks that apply to your change.
+
+- Make website updates directly in this checkout. Export approved web assets from the production workspace as needed. The old D:/Repos/kproductions/website folder is archived. Follow the repository ownership and update flow in docs/maintenance.md.

@@ -1,5 +1,18 @@
 # Engineering and release guide
 
+## Repository ownership and update flow
+
+D:/Repos/kproductions.net is the canonical website checkout. Website code, copy, product data, web assets, PDFs, and the design and maintenance guides belong here. Its GitHub repository is daddyfreds/kproductions.net.
+
+D:/Repos/kproductions holds production masters and internal business material. Export selected images, clips, and documents from that workspace into this site's public folder when they are ready for public release. Keep source project files, private proposals, and internal planning in the production repository.
+
+1. Open D:/Repos/kproductions.net and edit the website there. Add public files directly to public/ and update the relevant guide alongside workflow or design changes.
+2. Preview locally, run pnpm build, and review the Git diff and the affected pages.
+3. Commit the reviewed changes and push to main in daddyfreds/kproductions.net.
+4. Run Actions > Publish website > Run workflow on main. Wait for success, then check https://kproductions.net and the changed routes or files.
+
+The earlier D:/Repos/kproductions/website folder is an archived prototype. Website edits start in the canonical checkout. The original content manifest is retained separately at D:/Repos/kproductions/Website Reference/Site Content Manifest.txt. The old prototype folder can be removed as a separate cleanup once its archival documentation and preserved reference are committed in the production repository.
+
 ## How the site fits together
 
 K Productions uses Astro in static mode. Build output goes to `dist/`. The prototype renders `/`, the full catalog at `/films/`, and premiere story routes only when their `draft` flag is false. The homepage features Team Films, Spotlights, Posters, Premieres, and Start a Project. [Astro config](../astro.config.mjs) sets `https://kproductions.net` as the production site URL and uses trailing slashes. Asset and navigation URLs assume deployment at the root of a domain.

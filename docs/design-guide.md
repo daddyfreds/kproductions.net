@@ -24,7 +24,7 @@ Use the [light lockup](../public/media/logo-light.svg) on dark backgrounds and t
 ## Compose around the media
 
 - **Hero.** Use one strong subject and intentional negative space. Put the headline over the darker side on desktop. On narrow screens, use the dedicated crop and let the copy sit below the image. Check the contrast against the actual still.
-- **Team Films.** Feature Season Story, Senior Tribute, and Season End on the homepage. Each teaser identifies the product, opens its lead example, and links to its catalog section. The hero opens Born for This. Use the catalog for the complete range.
+- **Team Films.** Feature Season Story, Senior Tribute, and Season End on the homepage. Each teaser identifies the product, opens its lead example, and links to its catalog section. The hero’s Watch the Films button opens the complete YouTube playlist in a new tab. Use the catalog for the complete range.
 - **Film catalog.** The `/films/` page uses product jump links and scrollable product sections. Group Season Story, Heroes’ Opening, Season End, and Senior Tribute under Celebrating the season. Group Scoreboard Intimidation and Pregame Hype under Building game-day energy. Give each product a short pitch, one prominent example, and additional examples alongside it. Keep product and film titles visible so the Season End film named Spotlight is clearly identified.
 - **Spotlights.** Give Spotlight and Spotlight Story their own homepage section and catalog group. Both formats can feature athletes or coaches. Show an “Examples in production” label while a format has no finished examples.
 - **Posters.** Preserve the whole portrait composition, including credits and title treatment. Give the poster room in the layout and use the detail export for zoom.

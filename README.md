@@ -28,6 +28,8 @@ Open the local URL printed by Astro. Review `/`, `/films/`, and `/premieres/mans
 
 Update the affected guide in the same change when you move content, add an editing workflow, revise an approved design pattern, or change the release process. Keep project status and launch requirements in the [release checklist](docs/maintenance.md#public-release).
 
+For the division between the production and website repositories, see [repository ownership and update flow](docs/maintenance.md#repository-ownership-and-update-flow).
+
 ## Publishing
 
 The GitHub Actions workflow is manually triggered. After a reviewed commit is pushed to main, open Actions, choose Publish website, and select Run workflow. See [launch progress](docs/launch.md) for account setup and launch status.
