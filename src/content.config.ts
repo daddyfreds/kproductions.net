@@ -12,6 +12,19 @@ const premieres = defineCollection({
     chapters: z.array(z.object({
       title: z.string(),
       description: z.string(),
+      comingSoon: z.boolean().optional(),
+      film: z.object({
+        id: z.string(),
+        title: z.string(),
+        videoId: z.string(),
+        playback: z.enum(['embed', 'youtube']).optional(),
+        artwork: z.object({
+          src: z.string(),
+          alt: z.string(),
+          width: z.number(),
+          height: z.number(),
+        }),
+      }).optional(),
       media: z.object({
         src: z.string(),
         alt: z.string(),

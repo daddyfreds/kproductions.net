@@ -21,7 +21,7 @@ The 2026 stills are in `Events/2026 Mansfield Banquet/Video Stills/` in the sepa
 ## Update a film or the homepage hero
 
 1. Use the source manifest in D:/Repos/kproductions/Website Reference/Site Content Manifest.txt as the source for the supplied examples and credits. Gather the cleared YouTube link, a compact display title, matching artwork, and any intended starting time. Check the captions and confirm embedding is allowed. For `https://www.youtube.com/watch?v=8lSdy9shgLs&t=526`, enter `videoId: '8lSdy9shgLs'` and `start: 526` in the film data. Omit `start` for normal playback.
-2. Add or update the example inside the appropriate entry in `products`. Use a unique `id`, and include `title`, `videoId`, and `credits`. Include a year only when supplied. Each product’s first example is its lead and needs `artwork` with `src`, `alt`, `width`, and `height`. Use `orientation: 'portrait'` for vertical films. The premiere program uses `featuredFilm`, currently the first Season Story example, Born for This. The homepage hero’s Watch the Films button links directly to the complete YouTube playlist. Update that playlist URL in the homepage hero when needed.
+2. Add or update the example inside the appropriate entry in `products`. Use a unique `id`, and include `title` and `videoId`. Add credits when supplied. Include a year only when supplied. Each product’s first example is its lead and needs `artwork` with `src`, `alt`, `width`, and `height`. Use `orientation: 'portrait'` for vertical films. The premiere program uses `featuredFilm`, currently the first Season Story example, Born for This. The homepage hero’s Watch the Films button links directly to the complete YouTube playlist. Update that playlist URL in the homepage hero when needed.
 3. For a new hero frame, prepare separate desktop and mobile crops. The current exports are `mansfield-team.webp` at 1440×810 and `mansfield-team-small.webp` at 800×645. Check the text against the desktop frame and keep the subject visible in the mobile crop. Change the homepage credit with the image.
 4. Open the film from the preview and test playback, credits, and the direct YouTube link. Keep each timestamped segment as its own example. Unstoppable, Never Grow Up, and Legend share one YouTube ID but use different IDs and offsets of 526, 721, and 1011 seconds. Keep `examples: []` for a Spotlight format while its samples are in production. Adding the finished examples to that array automatically replaces the production label on the homepage and in the catalog.
 
@@ -46,8 +46,8 @@ Current lead artwork exports use Calling the shot, Superhero Introduction, The S
          caption: Sound check before guests arrived. Photo by the credited photographer.
    ```
 
-3. Replace planned-coverage copy with what happened and use the actual media credits. A chapter without `media` displays a planned-coverage panel. The current schema accepts still images in chapters. Adding clips to chapters requires extending the schema and template with a click-to-play path.
-4. Update the program section with the right film and poster. The current template generates a page for each Markdown entry and shares Mansfield-specific program content across all of them. Move program details into per-story data before featuring a second event with its own work. The homepage currently features Mansfield explicitly. During the soft launch, the header links to its homepage teaser.
+3. Replace planned-coverage copy with what happened and use the actual media credits. A chapter without `media` displays a planned-coverage panel. Chapters accept a still image in media or a video in film. Video chapters use the shared preview and viewer. The film object contains id, title, videoId, artwork (src, alt, width, height), and an optional playback setting of embed or youtube.
+4. Update the program section with the right film and poster. The current template generates a page for each Markdown entry and shares Mansfield-specific program content across all of them. Move program details into per-story data before featuring a second event with its own work. The homepage currently features Mansfield explicitly. The header and homepage now link to the published Mansfield story.
 5. Set `draft: false` when the story is complete to include its route in the public build. Update the homepage's upcoming-event copy and restore a link to the completed story. Draft stories are excluded from the public build. Follow the [release checklist](maintenance.md#public-release) before publishing.
 
 ## Update a poster or inquiry path
@@ -58,3 +58,9 @@ Current lead artwork exports use Calling the shot, Superhero Introduction, The S
 ## Editorial review
 
 Preview the affected pages with the [local commands](../README.md#run-locally). Read the copy aloud, follow its links, and look at the result on a phone. Confirm the names, dates, footage, music, attribution, and publication clearance for identifiable athletes and attendees. Include a short summary of the changes and, for a visual update, a desktop or mobile screenshot in the review.
+
+## November 2026 examples and premiere update
+
+Spotlight now features the portrait Sarah Jones film (video ID 4jKW63dn3Wc) on both the homepage and Films catalog, with a portrait crop of its YouTube thumbnail. Spotlight Story still shows Examples in production until its own samples are ready.
+
+The Mansfield premiere entry has draft set to false. Road to the Banquet (j2CMVMGJMYo) is its first video chapter. For Them has comingSoon set to true and no film URL. When it is ready, remove comingSoon, add its film object and matching web artwork, then review the story and build. Draft premiere entries continue to be excluded from public routes.

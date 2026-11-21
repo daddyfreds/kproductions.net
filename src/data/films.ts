@@ -7,7 +7,7 @@ export interface FilmExample {
   playback?: 'embed' | 'youtube';
   orientation?: 'landscape' | 'portrait';
   artwork?: { src: string; alt: string; width: number; height: number };
-  credits: { production?: string; music: string };
+  credits?: { production?: string; music?: string };
 }
 
 export interface FilmProduct {
@@ -156,7 +156,15 @@ export const products: Record<string, FilmProduct> = {
   spotlight: {
     name: 'Spotlight',
     description: 'One hero, their biggest moments, and the personality behind the plays. A character-focused trailer for recruitment or a lasting keepsake.',
-    examples: [],
+    examples: [
+      {
+        id: 'sarah-jones',
+        title: 'Sarah Jones',
+        videoId: '4jKW63dn3Wc',
+        orientation: 'portrait',
+        artwork: { src: '/media/sarah-jones.webp', alt: 'Sarah Jones Spotlight film preview.', width: 405, height: 720 },
+      },
+    ],
   },
   'spotlight-story': {
     name: 'Spotlight Story',

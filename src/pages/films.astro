@@ -62,7 +62,7 @@ import { products, productGroups } from '../data/films';
             <div class="product-example">
               <FilmPreview example={lead} productName={product.name} />
               <div class="film-caption"><strong>{lead.title}</strong><span>{lead.year} · Mansfield Girls Soccer</span></div>
-              <p class="example-credits">{lead.credits.production}{lead.credits.production && ' · '}Music {lead.credits.music}</p>
+              <p class="example-credits">{[lead.credits?.production, lead.credits?.music && 'Music ' + lead.credits.music].filter(Boolean).join(' · ')}</p>
             </div>
           </article>
         );

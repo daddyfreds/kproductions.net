@@ -369,3 +369,10 @@ figcaption { margin-top: 9px; color: var(--muted); font-size: .76rem; line-heigh
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; }
 }
+
+.chapter-grid-pair { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+@media (max-width: 680px) {
+  .chapter-grid-pair { grid-template-columns: 1fr; }
+}
+
+.spotlight-format { align-self: start; }

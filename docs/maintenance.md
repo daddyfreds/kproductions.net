@@ -43,7 +43,7 @@ Keep changes in website source, and review the Git diff for generated output or 
 
 ## Public release
 
-The site soft-launched on November 12, 2026 at https://kproductions.net, with HTTPS and domain redirects verified. This dedicated repository is the canonical website source. The Tally inquiry form is connected and the owner confirmed notification delivery. See [launch progress](launch.md) for the release record. The completed premiere story and indexing review belong to the post-banquet update.
+The site soft-launched on November 12, 2026 at https://kproductions.net, with HTTPS and domain redirects verified. This dedicated repository is the canonical website source. The Tally inquiry form is connected and the owner confirmed notification delivery. See [launch progress](launch.md) for the release record. The Mansfield premiere route is now enabled with Road to the Banquet and a forthcoming For Them chapter. Search indexing remains deferred pending a separate review.
 
 During the November 12, 2026 review, the owner confirmed that the final films are private or scheduled until the premiere. Their final URLs are already wired into the site. Recheck actual embedded playback after the videos are released and update this note when that check is complete. The viewer’s direct YouTube fallback is available during review.
 

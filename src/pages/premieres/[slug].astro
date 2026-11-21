@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import FilmLink from '../../components/FilmLink.astro';
+import FilmPreview from '../../components/FilmPreview.astro';
 import { featuredFilm } from '../../data/films';
 
 export async function getStaticPaths() {
@@ -21,7 +22,7 @@ const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone
       <div>
         <a class="text-link back-link" href="/#posters"><span aria-hidden="true">←</span> Back to the work</a>
         <p class="eyebrow"><span class="dot"></span> Premiere story / {draft ? 'Preview' : title}</p>
-        <h1 id="case-title">The night the season takes <em>the screen.</em></h1>
+        <h1 id="case-title">The night the season took <em>the screen.</em></h1>
         <p>{summary}</p>
       </div>
       <div class="case-screen">
@@ -37,10 +38,12 @@ const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone
       <div><p class="eyebrow"><span class="dot"></span> From setup to screening</p><h2 id="chapters-title">Inside the <em>premiere.</em></h2></div>
       <div><Content /></div>
     </header>
-    <ol class="chapter-grid">
+    <ol class:list={['chapter-grid', { 'chapter-grid-pair': chapters.length === 2 }]}>
       {chapters.map((chapter, index) => (
         <li class="chapter">
-          {chapter.media ? (
+          {chapter.film ? (
+            <FilmPreview example={chapter.film} productName="Premiere story" />
+          ) : chapter.media ? (
             <figure>
               <img class="chapter-media" src={chapter.media.src} alt={chapter.media.alt} loading="lazy" />
               <figcaption>{chapter.media.caption}</figcaption>
@@ -48,7 +51,7 @@ const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone
           ) : (
             <div class="chapter-media chapter-placeholder">
               <span aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
-              <span class="eyebrow">Planned coverage</span>
+              <span class="eyebrow">{chapter.comingSoon ? 'Coming soon' : 'Planned coverage'}</span>
             </div>
           )}
           <h3>{chapter.title}</h3>

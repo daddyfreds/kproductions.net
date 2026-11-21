@@ -28,3 +28,7 @@ The homepage shows the upcoming Mansfield premiere and a post-banquet story noti
 ## HTTPS provisioning check
 
 Soft launch completed November 12, 2026. The GitHub-managed certificate validates successfully for kproductions.net and www.kproductions.net. Both HTTP hostnames and HTTPS www redirect to https://kproductions.net/. The homepage and /films/ return HTTP 200. The live homepage retains noindex and the published Tally inquiry URL. The initial certificate delay cleared after the owner re-saved the custom domain and GitHub finished provisioning.
+
+## November 21 content update
+
+Prepared Sarah Jones as the Spotlight example and restored the Mansfield premiere route with Road to the Banquet. For Them is marked Coming soon. The homepage and header link to the story, and upcoming-event language has been replaced. Review, commit, push, and run Publish website to release these updates. Indexing remains deferred.
