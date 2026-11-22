@@ -74,13 +74,13 @@ const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone
         <figcaption>Photography by Christopher Jones Photography</figcaption>
       </figure>
       <div>
-        <p class="eyebrow"><span class="dot"></span> The premiere program</p>
-        <h2 id="program-title">The film. <em>The poster.</em></h2>
-        <p>One season, two ways to remember it. Watch the 2026 varsity Season Story, {featuredFilm.title}, and explore the team’s custom movie poster.</p>
+        <p class="eyebrow"><span class="dot"></span> More from Mansfield</p>
+        <h2 id="program-title">On screen. <em>On the wall.</em></h2>
+        <p>Explore the team’s 2026 movie poster, then watch {featuredFilm.title}, our {featuredFilm.year} Season Story with original music.</p>
         <figure class="program-still">
-          <img src="/media/born-for-this.webp" width="800" height="450" loading="lazy"
-            alt="Mansfield players appear behind the Born for This title." />
-          <figcaption><cite>Born for This</cite> · 2026 varsity film production still</figcaption>
+          <img src={featuredFilm.artwork!.src} width={featuredFilm.artwork!.width} height={featuredFilm.artwork!.height} loading="lazy"
+            alt={featuredFilm.artwork!.alt} />
+          <figcaption><cite>{featuredFilm.title}</cite> · {featuredFilm.year} Season Story production still</figcaption>
         </figure>
         <FilmLink {...featuredFilm} productName="Season Story" class="text-link">Watch {featuredFilm.title} <span aria-hidden="true">↗</span></FilmLink>
         <a href="/#project" class="button button-primary">Plan your premiere <span aria-hidden="true">↗</span></a>

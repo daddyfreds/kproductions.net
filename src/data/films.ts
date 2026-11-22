@@ -22,29 +22,12 @@ export const products: Record<string, FilmProduct> = {
     description: 'A music-driven film that brings a season’s turning points, personalities, and sideline moments together.',
     examples: [
       {
-        id: 'born-for-this',
-        title: 'Born for This',
-        videoId: 'SalfAixZg50',
-        playback: 'youtube',
-        year: 2026,
-        artwork: { src: '/media/season-story.webp', alt: 'A Mansfield player races toward the ball on the soccer field.', width: 1200, height: 675 },
-        credits: { production: 'Produced & Edited by Keith Fredericks', music: '“Born for This” by The Score' },
-      },
-      {
         id: 'tonight-we-fight',
         title: 'Tonight We Fight',
         videoId: 'c1LJZbMLc2o',
         year: 2025,
+        artwork: { src: '/media/tonight-we-fight.webp', alt: 'Mansfield teammates celebrate with high fives on the soccer field.', width: 1200, height: 675 },
         credits: { production: 'Produced & Edited by Keith Fredericks', music: '“Tonight We Fight” — Original Composition by Keith Fredericks' },
-      },
-      {
-        id: 'unstoppable',
-        title: 'Unstoppable',
-        videoId: '8lSdy9shgLs',
-        playback: 'youtube',
-        year: 2024,
-        start: 526,
-        credits: { production: 'Produced & Edited by Keith Fredericks', music: '“Unstoppable” by The Score' },
       },
     ],
   },
@@ -58,7 +41,7 @@ export const products: Record<string, FilmProduct> = {
         videoId: 'W4uVEfCH3SE',
         year: 2026,
         artwork: { src: '/media/heroes-opening.webp', alt: 'A cinematic MHS logo filled with scenes from the team’s season.', width: 1200, height: 675 },
-        credits: { music: 'Hype stinger — “Thunderstruck” by AC/DC' },
+        credits: { music: 'Third-party music' },
       },
     ],
   },
@@ -129,12 +112,12 @@ export const products: Record<string, FilmProduct> = {
     description: 'Before the rosters are read, make home-field advantage felt. An opening burst of sound, action, and team identity built for the scoreboard.',
     examples: [
       {
-        id: 'thunderstruck',
-        title: 'Thunderstruck',
+        id: 'mansfield-game-day-opener',
+        title: 'Mansfield Game-Day Opener',
         videoId: 'S3PRRNmkj1E',
         year: 2026,
         artwork: { src: '/media/scoreboard-intimidation.webp', alt: 'A Mansfield player in a cinematic game-day hype sequence.', width: 1200, height: 675 },
-        credits: { production: 'Produced & Edited by Keith Fredericks', music: '“Thunderstruck” by AC/DC' },
+        credits: { production: 'Produced & Edited by Keith Fredericks', music: 'Third-party music' },
       },
     ],
   },
@@ -197,3 +180,28 @@ export const productGroups = [
 export const homepageProductIds = ['season-story', 'senior-tribute', 'season-end'];
 export const spotlightProductIds = ['spotlight', 'spotlight-story'];
 export const featuredFilm = products['season-story'].examples[0];
+
+// Keep older examples and the catalog UI available without emitting their links.
+export const showAdditionalExamples = false;
+
+// Retired Season Story entries: retained for reference, never rendered by the site.
+export const archivedSeasonStories: FilmExample[] = [
+      {
+        id: 'born-for-this',
+        title: 'Born for This',
+        videoId: 'SalfAixZg50',
+        playback: 'youtube',
+        year: 2026,
+        artwork: { src: '/media/season-story.webp', alt: 'A Mansfield player races toward the ball on the soccer field.', width: 1200, height: 675 },
+        credits: { production: 'Produced & Edited by Keith Fredericks', music: '“Born for This” by The Score' },
+      },
+      {
+        id: 'unstoppable',
+        title: 'Unstoppable',
+        videoId: '8lSdy9shgLs',
+        playback: 'youtube',
+        year: 2024,
+        start: 526,
+        credits: { production: 'Produced & Edited by Keith Fredericks', music: '“Unstoppable” by The Score' },
+      },
+];

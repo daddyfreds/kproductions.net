@@ -28,7 +28,7 @@ K Productions uses Astro in static mode. Build output goes to `dist/`. The proto
 
 The YouTube player is created on click with the privacy-enhanced embed domain. The anchor is a direct YouTube link, including the configured start time. The shared dialog removes the iframe on close and restores focus. The poster viewer uses the same dialog and links directly to the detail file.
 
-Film examples can set `playback: 'youtube'` to open the watch page in a new tab. The shared film link sets `target="_blank"` and `rel="noopener noreferrer"`, and omits the dialog hook. The default `embed` mode uses the existing viewer. Born for This is configured for YouTube playback across the homepage, catalog, and premiere program.
+Film examples can set `playback: 'youtube'` to open the watch page in a new tab. The shared film link sets `target="_blank"` and `rel="noopener noreferrer"`, and omits the dialog hook. The default `embed` mode uses the existing viewer. Archived examples preserve their playback settings; Tonight We Fight is now the embedded Season Story lead across the homepage, catalog, and premiere related-work section.
 
 Example IDs identify individual works, including different segments of the same upload. Film links pass the product label, year, credits, and orientation to the shared viewer. The catalog keeps all products visible through ordinary anchors and scrolling, and the Spotlight component reads the same data on both pages.
 
@@ -61,3 +61,7 @@ During the November 12, 2026 review, the owner confirmed that the final films ar
 Shared data lives in `src/data/testimonials.ts`; the homepage strip and Mansfield collection read it directly. No third-party carousel or tracking service is used. The four-second timer runs only while the strip is visible and idle. CSS transitions crossfade both quotes over 750ms; delayed visibility lets the outgoing quote finish fading while the hidden attribute removes it from the accessibility tree. Native back and next buttons provide manual navigation, and a native details element exposes the additional static quotes.
 
 When changing this feature, check automatic rotation, hover/focus pause, autoplay resuming after manual navigation, manual navigation, tab visibility, and reduced motion. Check keyboard focus and manual announcements, the static anchor, all names and years, no-JavaScript reading, and mobile layout without jumps or horizontal overflow. Run `pnpm build` before review. Publishing remains a separate manual workflow.
+
+## Hidden historical film sections
+
+showAdditionalExamples in src/data/films.ts gates secondary examples in both Films and Spotlight layouts. Leave this false for the current original-music emphasis. The build must not contain secondary-example links or their data-music metadata. Retired Season Stories are stored separately in archivedSeasonStories. Confirm Tonight We Fight appears once in the Season Story catalog section, all primary film links still work, and scoreboard/intro metadata uses general music wording. No automatic changes are made to the external YouTube playlist, uploaded videos, public PDFs, or historic Git commits.

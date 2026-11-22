@@ -1,7 +1,7 @@
 ---
 import FilmPreview from './FilmPreview.astro';
 import FilmLink from './FilmLink.astro';
-import { products, spotlightProductIds } from '../data/films';
+import { products, spotlightProductIds, showAdditionalExamples } from '../data/films';
 
 interface Props {
   catalog?: boolean;
@@ -21,7 +21,7 @@ const { catalog = false } = Astro.props;
         {lead ? (
           <>
             <FilmPreview example={lead} productName={product.name} />
-            {additional.map((example) => (
+            {showAdditionalExamples && additional.map((example) => (
               <FilmLink {...example} productName={product.name} class="text-link">{example.title} <span aria-hidden="true">↗</span></FilmLink>
             ))}
           </>

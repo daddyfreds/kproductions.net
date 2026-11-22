@@ -3,7 +3,7 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import FilmPreview from '../components/FilmPreview.astro';
 import FilmLink from '../components/FilmLink.astro';
 import SpotlightFormats from '../components/SpotlightFormats.astro';
-import { products, productGroups } from '../data/films';
+import { products, productGroups, showAdditionalExamples } from '../data/films';
 ---
 
 <SiteLayout title="Films" description="Explore season stories, senior tributes, game-day films, and individual spotlights from K Productions.">
@@ -43,7 +43,7 @@ import { products, productGroups } from '../data/films';
               <h3 id={`${id}-title`}>{product.name}</h3>
               <p>{product.description}</p>
               <a class="text-link" href="/#project">Plan a {product.name} <span aria-hidden="true">↗</span></a>
-              {additional.length > 0 && (
+              {showAdditionalExamples && additional.length > 0 && (
                 <div class="additional-examples">
                   <p class="eyebrow">More {product.name} films</p>
                   <ul>
