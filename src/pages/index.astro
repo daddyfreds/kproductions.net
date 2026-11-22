@@ -4,6 +4,7 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 import FilmPreview from '../components/FilmPreview.astro';
 import SpotlightFormats from '../components/SpotlightFormats.astro';
 import Poster from '../components/Poster.astro';
+import TestimonialStrip from '../components/TestimonialStrip.astro';
 import { products, homepageProductIds } from '../data/films';
 
 const premiere = await getEntry('premieres', 'mansfield-2026');
@@ -31,6 +32,8 @@ const date = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone: 'UT
       <div class="hero-credit"><span>2026 PRODUCTION STILL</span><span>Mansfield Girls Soccer</span></div>
     </div>
   </section>
+
+  <TestimonialStrip />
 
   <section class="section shell films-section" id="films" aria-labelledby="films-title">
     <header class="section-head">

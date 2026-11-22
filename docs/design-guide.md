@@ -35,3 +35,11 @@ Keep media lightweight with optimized WebP stills, explicit dimensions, and lazy
 Use the shared film preview and link for all products. Default to the embedded viewer, with a per-example `playback: 'youtube'` option to open YouTube in a new tab when needed. Born for This uses that option. Preserve portrait framing for embedded Pregame Hype. The viewer identifies the product, film, supplied year, and credits. Use compact display titles and keep the full YouTube descriptions in the source manifest.
 
 Review at phone, tablet, and desktop widths. The current layout changes at 680px and 860px. Check long titles, image crops, visible keyboard focus, readable text, and the media viewer’s close and focus behavior.
+
+## Testimonials
+
+Place the homepage quote strip immediately after the splash, before Team Films. Keep the opening headline and film action dominant. Use a short curated rotation of five quotes at four-second intervals, with a 750ms CSS crossfade between outgoing and incoming quotes. Preserve space for the longest quote so the page does not jump. Do not add sound, star ratings, or dramatic impact effects.
+
+Provide previous and next controls; the strip autoplays without a play/pause button. Pause while hovered or keyboard-focused, offscreen, or in a background tab. Manual navigation resets the four-second interval, which resumes after hover and focus leave. Reduced motion disables autoplay and removes the animation; visitors can still browse. Without JavaScript, show the first quote and the link to the static collection. Automatic changes should not be announced to screen readers.
+
+The Mansfield story holds the fuller static selection after its film chapters, with additional voices inside a native expandable section. Keep historical years visible and avoid implying every quote describes the 2026 event.

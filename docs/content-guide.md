@@ -64,3 +64,11 @@ Preview the affected pages with the [local commands](../README.md#run-locally). 
 Spotlight now features the portrait Sarah Jones film (video ID 4jKW63dn3Wc) on both the homepage and Films catalog, with a portrait crop of its YouTube thumbnail. Spotlight Story still shows Examples in production until its own samples are ready.
 
 The Mansfield premiere entry has draft set to false. Road to the Banquet (j2CMVMGJMYo) is its first video chapter. For Them has comingSoon set to true and no film URL. When it is ready, remove comingSoon, add its film object and matching web artwork, then review the story and build. Draft premiere entries continue to be excluded from public routes.
+
+## Add or curate testimonials
+
+Edit `src/data/testimonials.ts` for the shared quote text, supplied author name, year, and stable ID. Keep original wording in `text`; use an optional `excerpt` for a shorter verbatim passage. Excerpts are labeled on the site. Do not invent roles or rewrite praise. Chris Joynes and Chris Jones are separate supplied attributions. Lauren Herpst Rogers uses an excerpt of her first two sentences; her full supplied wording remains in the data.
+
+`homepageTestimonialIds` selects and orders the short homepage rotation. Aim for five concise quotes that convey emotional impact, craft, and replay value. `featuredTestimonialIds` selects the full quotes shown first on the Mansfield story. The remaining records appear under More voices, across the seasons. All twelve supplied quotes are represented. Source social URLs are omitted from the public presentation.
+
+Use `TestimonialStrip.astro` for the homepage band and `TestimonialCollection.astro` for the static collection at `/premieres/mansfield-2026/#testimonials`. The collection is restricted to the Mansfield slug; a second event needs its own quote selection. Confirm attribution and permission to publish when adding quotes, following the existing editorial review.

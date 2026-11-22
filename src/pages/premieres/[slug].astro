@@ -3,6 +3,7 @@ import { getCollection, render } from 'astro:content';
 import SiteLayout from '../../layouts/SiteLayout.astro';
 import FilmLink from '../../components/FilmLink.astro';
 import FilmPreview from '../../components/FilmPreview.astro';
+import TestimonialCollection from '../../components/TestimonialCollection.astro';
 import { featuredFilm } from '../../data/films';
 
 export async function getStaticPaths() {
@@ -60,6 +61,8 @@ const dateLabel = new Intl.DateTimeFormat('en-US', { dateStyle: 'long', timeZone
       ))}
     </ol>
   </section>
+
+  {entry.id === 'mansfield-2026' && <TestimonialCollection />}
 
   <section class="case-program" aria-labelledby="program-title">
     <div class="shell program-inner">

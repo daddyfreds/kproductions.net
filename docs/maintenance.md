@@ -55,3 +55,9 @@ During the November 12, 2026 review, the owner confirmed that the final films ar
 - [ ] On the live domain, verify the homepage, a direct premiere URL, assets, video playback, and inbox delivery. Record the release commit and the deployment result. To roll back a broken site release, redeploy a known-good commit from the same release repository.
 
 [Astro and GitHub Pages](https://docs.astro.build/en/guides/deploy/github/) · [GitHub domain verification](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/verifying-your-custom-domain-for-github-pages) · [Namecheap DNS setup](https://www.namecheap.com/support/knowledgebase/article.aspx/9645/2208/how-do-i-link-my-domain-to-github-pages/)
+
+## Testimonial behavior checks
+
+Shared data lives in `src/data/testimonials.ts`; the homepage strip and Mansfield collection read it directly. No third-party carousel or tracking service is used. The four-second timer runs only while the strip is visible and idle. CSS transitions crossfade both quotes over 750ms; delayed visibility lets the outgoing quote finish fading while the hidden attribute removes it from the accessibility tree. Native back and next buttons provide manual navigation, and a native details element exposes the additional static quotes.
+
+When changing this feature, check automatic rotation, hover/focus pause, autoplay resuming after manual navigation, manual navigation, tab visibility, and reduced motion. Check keyboard focus and manual announcements, the static anchor, all names and years, no-JavaScript reading, and mobile layout without jumps or horizontal overflow. Run `pnpm build` before review. Publishing remains a separate manual workflow.

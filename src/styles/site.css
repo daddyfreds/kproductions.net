@@ -376,3 +376,35 @@ figcaption { margin-top: 9px; color: var(--muted); font-size: .76rem; line-heigh
 }
 
 .spotlight-format { align-self: start; }
+
+/* Testimonials: a quiet bridge from the opening frame to the work. */
+.testimonial-strip { border-block: 1px solid var(--line); background: var(--panel); }
+.testimonial-strip-inner { display: grid; grid-template-columns: 200px minmax(0, 1fr); column-gap: 48px; padding-block: 32px; }
+.testimonial-intro .text-link { margin-top: 16px; font-size: .8rem; }
+.testimonial-stage { display: grid; min-width: 0; }
+.testimonial-slide { grid-area: 1 / 1; align-self: center; margin: 0; opacity: 1; visibility: visible; transition: opacity 750ms ease-in-out, visibility 0s; }
+/* Retain the tallest slide's space, including without JS, to prevent layout shifts. */
+.testimonial-slide[hidden] { display: block; opacity: 0; visibility: hidden; pointer-events: none; transition-delay: 0s, 750ms; }
+.testimonial-slide blockquote { margin: 0; font-size: clamp(1.2rem, 2.15vw, 1.8rem); letter-spacing: -.025em; }
+.testimonial-slide blockquote p { line-height: 1.35; }
+.testimonial-slide figcaption, .testimonial-card figcaption { margin-top: 16px; color: var(--paper); font-size: .82rem; line-height: 1.5; }
+.testimonial-slide figcaption span, .testimonial-card figcaption span { color: var(--muted); }
+.testimonial-controls { grid-column: 2; display: flex; align-items: center; gap: 12px; margin-top: 20px; color: var(--muted); font: .75rem ui-monospace, Consolas, monospace; }
+.testimonial-controls[hidden] { display: none; }
+.testimonial-controls button { min-height: 44px; min-width: 44px; padding: 8px 12px; border: 1px solid var(--line); background: transparent; color: var(--paper); cursor: pointer; }
+.testimonial-controls button:hover { border-color: var(--accent); color: var(--accent); }
+.testimonial-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; align-items: start; }
+.testimonial-card { margin: 0; border-top: 1px solid var(--line); padding-top: 24px; }
+.testimonial-card blockquote { margin: 0; font-size: 1.05rem; }
+.testimonial-grid > .testimonial-card:last-child:nth-child(odd) { grid-column: 1 / -1; max-width: 850px; }
+.testimonial-more { margin-top: 38px; border-top: 1px solid var(--line); padding-top: 22px; }
+.testimonial-more summary { cursor: pointer; width: fit-content; padding: 10px 0; color: var(--accent); }
+.testimonial-more summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 5px; }
+.testimonial-more summary span { color: var(--muted); }
+.testimonial-grid-more { margin-top: 24px; row-gap: 32px; }
+@media (max-width: 680px) {
+  .testimonial-strip-inner { grid-template-columns: minmax(0, 1fr); gap: 24px; padding-block: 28px; }
+  .testimonial-intro .text-link { margin-top: 8px; }
+  .testimonial-controls { grid-column: 1; margin-top: 0; }
+  .testimonial-grid { grid-template-columns: minmax(0, 1fr); gap: 30px; }
+}

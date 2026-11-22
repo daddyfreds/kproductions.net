@@ -1,0 +1,31 @@
+---
+import { testimonials, featuredTestimonialIds } from '../data/testimonials';
+const featured = featuredTestimonialIds.map((id) => testimonials.find((quote) => quote.id === id)!);
+const additional = testimonials.filter((quote) => !featuredTestimonialIds.includes(quote.id));
+---
+
+<section class="section shell testimonial-collection" id="testimonials" aria-labelledby="testimonials-title">
+  <header class="section-head">
+    <div><p class="eyebrow"><span class="dot"></span> In their words</p><h2 id="testimonials-title">After the <em>applause.</em></h2></div>
+    <p>What coaches and families have shared after the films and the banquet nights, this season and across the years.</p>
+  </header>
+  <div class="testimonial-grid">
+    {featured.map((quote) => (
+      <figure class="testimonial-card">
+        <blockquote><p>“{quote.text.trim()}”</p></blockquote>
+        <figcaption>{quote.author} <span>· {quote.year}</span></figcaption>
+      </figure>
+    ))}
+  </div>
+  <details class="testimonial-more">
+    <summary>More voices, across the seasons <span>({additional.length})</span></summary>
+    <div class="testimonial-grid testimonial-grid-more">
+      {additional.map((quote) => (
+        <figure class="testimonial-card">
+          <blockquote><p>“{quote.excerpt ?? quote.text.trim()}”</p></blockquote>
+          <figcaption>{quote.author} <span>· {quote.year}{quote.excerpt ? ' · Excerpt' : ''}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+  </details>
+</section>

@@ -1,0 +1,70 @@
+---
+import { testimonials, homepageTestimonialIds } from '../data/testimonials';
+const selected = homepageTestimonialIds.map((id) => testimonials.find((quote) => quote.id === id)!);
+---
+
+<section class="testimonial-strip" data-testimonial-strip aria-label="Client testimonials" aria-roledescription="carousel">
+  <div class="shell testimonial-strip-inner">
+    <div class="testimonial-intro">
+      <p class="eyebrow"><span class="dot"></span> From the room</p>
+      <a class="text-link" href="/premieres/mansfield-2026/#testimonials">Read the testimonials <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="testimonial-stage" aria-live="off">
+      {selected.map((quote, index) => (
+        <figure class="testimonial-slide" data-quote hidden={index !== 0} role="group" aria-roledescription="slide" aria-label={(index + 1) + ' of ' + selected.length}>
+          <blockquote><p>“{quote.excerpt ?? quote.text}”</p></blockquote>
+          <figcaption>{quote.author} <span>· {quote.year}{quote.excerpt ? ' · Excerpt' : ''}</span></figcaption>
+        </figure>
+      ))}
+    </div>
+    <div class="testimonial-controls" data-controls hidden>
+      <button type="button" data-previous aria-label="Previous testimonial">←</button>
+      <span data-count aria-hidden="true">1 / {selected.length}</span>
+      <button type="button" data-next aria-label="Next testimonial">→</button>
+    </div>
+    <span class="sr-only" data-announcement aria-live="polite" aria-atomic="true"></span>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-testimonial-strip]').forEach((root) => {
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-quote]')];
+    const controls = root.querySelector<HTMLElement>('[data-controls]')!;
+    const count = root.querySelector<HTMLElement>('[data-count]')!;
+    const announcement = root.querySelector<HTMLElement>('[data-announcement]')!;
+    const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let index = 0;
+    let inView = false;
+    let timer: ReturnType<typeof setTimeout> | undefined;
+
+    const schedule = () => {
+      clearTimeout(timer);
+      if (!motion.matches && inView && !document.hidden && !root.matches(':hover, :focus-within')) {
+        timer = setTimeout(() => show(index + 1), 4000);
+      }
+    };
+    const show = (next: number, manual = false) => {
+      slides[index].hidden = true;
+      index = (next + slides.length) % slides.length;
+      slides[index].hidden = false;
+      count.textContent = (index + 1) + ' / ' + slides.length;
+      if (manual) {
+        announcement.textContent = slides[index].textContent ?? '';
+      }
+      schedule();
+    };
+    root.querySelector('[data-previous]')!.addEventListener('click', () => show(index - 1, true));
+    root.querySelector('[data-next]')!.addEventListener('click', () => show(index + 1, true));
+    root.addEventListener('mouseenter', schedule);
+    root.addEventListener('mouseleave', schedule);
+    root.addEventListener('focusin', schedule);
+    root.addEventListener('focusout', () => requestAnimationFrame(schedule));
+    document.addEventListener('visibilitychange', schedule);
+    motion.addEventListener('change', schedule);
+    new IntersectionObserver(([entry]) => {
+      inView = entry.isIntersecting;
+      schedule();
+    }, { threshold: 0.25 }).observe(root);
+    controls.hidden = false;
+  });
+</script>
