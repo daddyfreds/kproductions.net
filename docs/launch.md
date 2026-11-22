@@ -31,4 +31,8 @@ Soft launch completed November 12, 2026. The GitHub-managed certificate validate
 
 ## November 21 content update
 
-Prepared Sarah Jones as the Spotlight example and restored the Mansfield premiere route with Road to the Banquet. For Them is marked Coming soon. The homepage and header link to the story, and upcoming-event language has been replaced. Review, commit, push, and run Publish website to release these updates. Indexing remains deferred.
+Prepared Sarah Jones as the Spotlight example and restored the Mansfield premiere route with Road to the Banquet. The second film was initially marked Coming soon; see the November 22 update below for its completed release. The homepage and header link to the story, and upcoming-event language has been replaced. Review, commit, push, and run Publish website to release these updates. Indexing remains deferred.
+
+## November 22, 2026 — completed premiere films
+
+Prepared the updated Road to the Banquet (ciM63BU87v4) and completed Senior Tribute Reactions (ibSBGsLZKy0), with refreshed web artwork. The second chapter now has a playable film instead of a Coming soon panel. The homepage invitation reads Watch the premiere films. These source changes require the usual reviewed commit, push, and manually triggered Publish website workflow; this entry does not assert a live deployment. Indexing remains deferred.

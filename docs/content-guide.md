@@ -63,7 +63,7 @@ Preview the affected pages with the [local commands](../README.md#run-locally). 
 
 Spotlight now features the portrait Sarah Jones film (video ID 4jKW63dn3Wc) on both the homepage and Films catalog, with a portrait crop of its YouTube thumbnail. Spotlight Story still shows Examples in production until its own samples are ready.
 
-The Mansfield premiere entry has draft set to false. Road to the Banquet (j2CMVMGJMYo) is its first video chapter. For Them has comingSoon set to true and no film URL. When it is ready, remove comingSoon, add its film object and matching web artwork, then review the story and build. Draft premiere entries continue to be excluded from public routes.
+The Mansfield premiere entry has draft set to false and two completed film chapters: Road to the Banquet (ciM63BU87v4) and Senior Tribute Reactions (ibSBGsLZKy0). Both use the shared embedded viewer with direct YouTube fallback links and optimized copies of their YouTube thumbnails. The second chapter has no comingSoon flag. Its final public title is Senior Tribute Reactions. Update video IDs, titles, descriptions, and artwork together in the premiere Markdown when replacing a film. The homepage invitation points to the story and labels it Watch the premiere films. Draft premiere entries continue to be excluded from public routes.
 
 ## Add or curate testimonials
 
