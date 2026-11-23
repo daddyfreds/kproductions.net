@@ -43,7 +43,7 @@ import { products, productGroups, showAdditionalExamples } from '../data/films';
               <h3 id={`${id}-title`}>{product.name}</h3>
               <p>{product.description}</p>
               <a class="text-link" href="/#project">Plan a {product.name} <span aria-hidden="true">↗</span></a>
-              {showAdditionalExamples && additional.length > 0 && (
+              {(product.showAdditionalExamples ?? showAdditionalExamples) && additional.length > 0 && (
                 <div class="additional-examples">
                   <p class="eyebrow">More {product.name} films</p>
                   <ul>

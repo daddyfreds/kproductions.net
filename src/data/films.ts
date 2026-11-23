@@ -14,6 +14,7 @@ export interface FilmProduct {
   name: string;
   description: string;
   examples: FilmExample[];
+  showAdditionalExamples?: boolean;
 }
 
 export const products: Record<string, FilmProduct> = {
@@ -138,6 +139,7 @@ export const products: Record<string, FilmProduct> = {
   },
   spotlight: {
     name: 'Spotlight',
+    showAdditionalExamples: true,
     description: 'One hero, their biggest moments, and the personality behind the plays. A character-focused trailer for recruitment or a lasting keepsake.',
     examples: [
       {
@@ -146,6 +148,11 @@ export const products: Record<string, FilmProduct> = {
         videoId: '4jKW63dn3Wc',
         orientation: 'portrait',
         artwork: { src: '/media/sarah-jones.webp', alt: 'Sarah Jones Spotlight film preview.', width: 405, height: 720 },
+      },
+      {
+        id: 'hailey',
+        title: 'Hailey Nieratko',
+        videoId: 'zZsoXJaSsgA',
       },
     ],
   },

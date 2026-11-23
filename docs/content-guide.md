@@ -61,7 +61,7 @@ Preview the affected pages with the [local commands](../README.md#run-locally). 
 
 ## November 2026 examples and premiere update
 
-Spotlight now features the portrait Sarah Jones film (video ID 4jKW63dn3Wc) on both the homepage and Films catalog, with a portrait crop of its YouTube thumbnail. Spotlight Story still shows Examples in production until its own samples are ready.
+Spotlight features Sarah Jones (4jKW63dn3Wc) as its lead portrait preview and Hailey (zZsoXJaSsgA) as an additional playable example on both the homepage and Films catalog. Hailey uses the shared viewer and direct YouTube fallback; no year or credits have been supplied. Spotlight Story still shows Examples in production until its own samples are ready.
 
 The Mansfield premiere entry has draft set to false and two completed film chapters: Road to the Banquet (ciM63BU87v4) and Senior Tribute Reactions (ibSBGsLZKy0). Both use the shared embedded viewer with direct YouTube fallback links and optimized copies of their YouTube thumbnails. The second chapter has no comingSoon flag. Its final public title is Senior Tribute Reactions. Update video IDs, titles, descriptions, and artwork together in the premiere Markdown when replacing a film. The homepage invitation points to the story and labels it Watch the premiere films. Draft premiere entries continue to be excluded from public routes.
 
@@ -75,9 +75,9 @@ Use `TestimonialStrip.astro` for the homepage band and `TestimonialCollection.as
 
 ## Portfolio visibility and music references
 
-Tonight We Fight (2025) is the active Season Story lead, with artwork exported from the owner-supplied Tonight We Fight 2.png to /media/tonight-we-fight.webp. Born for This and Unstoppable are preserved in archivedSeasonStories, outside the active products array. They are not public page examples. The other historical examples remain in their product data, but showAdditionalExamples is false: the build omits their links and metadata rather than merely hiding them with CSS. Keep this false until the additional examples have been reviewed for reuse. The same setting gates additional Spotlight examples.
+Tonight We Fight (2025) is the active Season Story lead, with artwork exported from the owner-supplied Tonight We Fight 2.png to /media/tonight-we-fight.webp. Born for This and Unstoppable are preserved in archivedSeasonStories, outside the active products array. They are not public page examples. The other historical examples remain in their product data, but showAdditionalExamples is false: the build omits their links and metadata rather than merely hiding them with CSS. Keep this false until the additional examples have been reviewed for reuse. A product can override this default with showAdditionalExamples: true; Spotlight does so to display the newly supplied Hailey example alongside Sarah Jones.
 
-To restore older sections, review every secondary example and its music, then set showAdditionalExamples to true. To restore an archived Season Story, explicitly move its record back into products['season-story'].examples, provide artwork if it becomes lead, and check the rendered pages. This is editorial visibility, not a rights-status guarantee. Data in this public source repository remains readable.
+To restore older sections, review every secondary example and its music, then set showAdditionalExamples to true globally or on the reviewed product. To restore an archived Season Story, explicitly move its record back into products['season-story'].examples, provide artwork if it becomes lead, and check the rendered pages. This is editorial visibility, not a rights-status guarantee. Data in this public source repository remains readable.
 
 The scoreboard example keeps its video ID but uses the display title Mansfield Game-Day Opener and stable example ID mansfield-game-day-opener. Its music and the Heroes’ Opening stinger are labeled Third-party music. Detailed source credits remain in the production manifest. General display copy does not change the linked YouTube video, thumbnail, title, description, or soundtrack.
 
