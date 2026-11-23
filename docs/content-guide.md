@@ -61,7 +61,7 @@ Preview the affected pages with the [local commands](../README.md#run-locally). 
 
 ## November 2026 examples and premiere update
 
-Spotlight features Sarah Jones (4jKW63dn3Wc) as its lead portrait preview and Hailey (zZsoXJaSsgA) as an additional playable example on both the homepage and Films catalog. Hailey uses the shared viewer and direct YouTube fallback; no year or credits have been supplied. Spotlight Story still shows Examples in production until its own samples are ready.
+Spotlight features Sarah Jones (4jKW63dn3Wc) as its lead portrait preview and Hailey Nieratko (zZsoXJaSsgA) as a second full video preview underneath it on both the homepage and Films catalog. Hailey uses a landscape YouTube thumbnail exported to /media/hailey-nieratko.webp and a Watch Hailey Nieratko button with the shared viewer and direct YouTube fallback; no year or credits have been supplied. Add artwork and dimensions for every additional Spotlight example so it receives a full preview rather than a text-only link. Spotlight Story still shows Examples in production until its own samples are ready.
 
 The Mansfield premiere entry has draft set to false and two completed film chapters: Road to the Banquet (ciM63BU87v4) and Senior Tribute Reactions (ibSBGsLZKy0). Both use the shared embedded viewer with direct YouTube fallback links and optimized copies of their YouTube thumbnails. The second chapter has no comingSoon flag. Its final public title is Senior Tribute Reactions. Update video IDs, titles, descriptions, and artwork together in the premiere Markdown when replacing a film. The homepage invitation points to the story and labels it Watch the premiere films. Draft premiere entries continue to be excluded from public routes.
 

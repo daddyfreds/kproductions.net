@@ -153,6 +153,7 @@ export const products: Record<string, FilmProduct> = {
         id: 'hailey',
         title: 'Hailey Nieratko',
         videoId: 'zZsoXJaSsgA',
+        artwork: { src: '/media/hailey-nieratko.webp', alt: 'Hailey Nieratko Spotlight artwork featuring her Mansfield soccer player card.', width: 1280, height: 720 },
       },
     ],
   },
